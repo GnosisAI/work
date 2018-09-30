@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="49px" height="63px" viewBox="0 0 49 63" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Categories" transform="translate(-119.000000, -741.000000)">
+            <g id="text_analysis-copy-4" transform="translate(114.000000, 742.000000)">
+                <rect id="bound" x="0" y="1" width="60" height="60"></rect>
+                <polygon id="Combined-Shape" stroke="#5000BE" stroke-width="3" stroke-linecap="round" points="6.66666667 1 30.0731452 1 38.8505747 9.8 38.8505747 45 6.66666667 45"></polygon>
+                <polygon id="Triangle-2" stroke="#5000BE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="29.5290476 0.847901963 39.0378895 10.1482386 29.5290476 10.1482386"></polygon>
+                <g id="glass" transform="translate(38.833333, 45.000000) scale(-1, 1) translate(-38.833333, -45.000000) translate(24.333333, 29.000000)">
+                    <path d="M10.5399343,21.2405579 C15.6898397,24.7883864 22.7980073,23.5282956 26.3837758,18.4328799 C29.9695442,13.3374641 28.6990693,6.30450575 23.549164,2.75667724 C18.3977131,-0.791151266 11.2895454,0.467410313 7.70377697,5.56282609 C4.11646296,10.6582419 5.39002898,17.6927294 10.5399343,21.2405579 Z" id="Path"></path>
+                    <g id="frame" stroke="#5000BE" fill="#5000BE">
+                        <path d="M9.56549515,24.4549308 C10.1605059,24.8648123 10.3082691,25.6819645 9.8940044,26.271985 C8.15575766,28.7317066 6.85579335,30.5737164 5.99411145,31.7980144 L0.214822976,31.7980144 C1.4991093,29.9730255 3.4255388,27.2355422 5.99411145,23.5855644 C6.40969544,22.9955439 7.23558617,22.8493442 7.83191621,23.2592256 L7.9532259,23.3428968 L9.56496742,21.0513482 C4.82071335,17.2201313 3.77977441,10.3657122 7.33796496,5.31137765 C11.070305,0.00772029918 18.442633,-1.29894005 23.8030069,2.39521459 C29.1633807,6.08806387 30.482695,13.3823876 26.7503549,18.6860449 C23.1921644,23.7403795 16.3343689,25.1527736 11.0571118,22.0786626 L9.44359842,24.3708547 L9.56549515,24.4549308 Z M11.4920898,19.8874937 C15.8880449,22.9159173 21.9555711,21.8403048 25.0163802,17.4908619 C28.0771893,13.1414191 26.992713,7.13809143 22.5967578,4.10966784 C18.1994834,1.08124425 12.1319572,2.15555141 9.07114809,6.50499426 C6.00901971,10.8544371 7.09613465,16.8590701 11.4920898,19.8874937 Z" id="Combined-Shape"></path>
+                    </g>
+                </g>
+                <path d="M11.3333333,13 L19.9677419,13" id="Path-2" stroke="#5000BE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M11.3333333,18 L34.1501138,18" id="Path-3" stroke="#5000BE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M11.3333333,22.5 L34.6394865,22.5" id="Path-4" stroke="#5000BE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M11.3333333,27 L34.6394865,27" id="Path-4" stroke="#5000BE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>
