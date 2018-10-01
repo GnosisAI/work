@@ -4,7 +4,7 @@
         <Search/>
         <Types/>
         <h3 class="mb-32" >Browse all algorithms:</h3>
-        <Algorithms :algorithms-list="algorithms"/>
+        <Algorithms :algorithms-list="algorithms" :loading="loading"/>
       </div>
     </div>
 </template>
@@ -22,12 +22,19 @@ export default {
     Types,
     Algorithms
   },
-    created(){
+  data(){
+    return{
+      loading:true
+    }
+  },
+  created(){
     this.$store.dispatch('getAlgos');
   },
   computed:{
     algorithms(){
-
+    if(this.$store.state.algorithms != null){
+          this.loading=false
+    }
     return this.$store.state.algorithms
     }
   }

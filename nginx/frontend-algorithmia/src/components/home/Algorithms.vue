@@ -11,11 +11,12 @@
                 <div id="top-rated-algorithms" role="tabpanel" class="tab-pane active" style="display:;">
                   <div >
                     <!---->
-                    <div class="pv-32 loading"  v-if="!show">
-                      <span class="mr-8" ><i class="aspinner"></i></span>
+                    <div class="pv-32 api-loading"  v-if="loading">
+                      <span class="mr-8" >
+                        <i class="aspinner" ></i></span>
                       <span class="pb-8" >Loading...</span>
                     </div>
-                    <div v-if="show">
+                    <div v-if="!loading">
                       <algo-item v-for="algo in algorithmsList" :key="algo.id" v-bind="algo" />
                     </div>
                     <!---->
@@ -58,19 +59,20 @@ export default {
     AlgoItem
   },
   props:{
-    algorithmsList:Array
+    algorithmsList:Array,
+    loading:Boolean
   },
   show:false,
   data(){
-    this.show = true;
     return {
     }
   }
-
 }
 </script>
 
 
 <style scoped>
-
+.api-loading{
+  color:#5000be;
+}
 </style>

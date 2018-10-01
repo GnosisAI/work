@@ -651,17 +651,49 @@ html .btn, body .btn {
     margin-left: auto;
     animation-delay: 1s;
     text-align: center; }
-#about .about-btn .btn {
+    #about .about-btn .btn {
+    background: #005C97;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #143961, #005C97);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #143961, #005C97); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     /*button style*/
-    margin: 7px 7px;
-    background: #1F5694;
+    margin: 7px 17px;
     color: #ffffff;
     width: 180px;
     border-radius: 2px; }
 #about .about-btn .btn:hover {
     /*hover effect*/
-    background: #143961; }
+    background: #143961; 
 
+}
+    .my-work{
+        
+        animation: shake 4s cubic-bezier(.36,.07,.19,.97) forwards;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+        animation-iteration-count: infinite;
+        animation-delay: 1s;
+
+      }
+      
+      @keyframes shake {
+        3%, 23% {
+          transform: translate3d(-0.6px, 1px, 0);
+        }
+        
+        5%, 20% {
+          transform: translate3d(1px, 0, 0);
+        }
+      
+        7%, 13%, 18% {
+          transform: translate3d(-2px, 0, 0);
+        }
+      
+        10%, 15% {
+          transform: translate3d(2px, 0, 0);
+        }
+      }
 /*
 -------------------------------------------------------------------------------
 #TIMELINE SECTION BOTH 5.EDUCATION AND 7.EXPERIENCE EXTENDS FROM IT
