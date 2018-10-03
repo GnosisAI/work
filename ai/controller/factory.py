@@ -3,6 +3,6 @@ def factoryAlgorithm(name):
     algorithm = None
     if(name == 'RxNet'):
         algorithm = RxNet()
-    elif(name == ''):
-        algorithm =  ''
+    else:
+        algorithm = RxNet()
     return algorithm

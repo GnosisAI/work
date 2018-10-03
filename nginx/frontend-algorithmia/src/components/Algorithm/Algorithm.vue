@@ -33,9 +33,10 @@ import OutputConsole from './OutputConsole.vue'
 import Links from './Links.vue'
 import axios from 'axios';
 import env from '../../config/env'
-
-
 import Banner from './Banner.vue'
+
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+
 
   export default  {
     name: 'algorithm',
@@ -62,11 +63,10 @@ import Banner from './Banner.vue'
           return str;
       },
       onSubmit(value){
-      axios.get(env.API_URL+'algorithm/predict/conv')
-                .then(prediction => {
-                  this.output = this.objToString(prediction.data)
-                })
-        
+
+      axios.post(env.API_URL+'algorithm/predict/conv',JSON.parse(value))
+        .then(prediction => {
+        this.output = this.objToString(prediction.data)})
       }
     },
     data(){

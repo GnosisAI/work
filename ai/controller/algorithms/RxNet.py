@@ -3,6 +3,7 @@ from keras.applications import imagenet_utils
 from PIL import Image
 import numpy as np
 import io
+from keras.preprocessing.image import load_img
 
 from algorithms.algorithm import algorithm
 from algorithms.preprocess.image import prepare_image
@@ -14,8 +15,7 @@ class RxNet(algorithm):
         self.model =  ResNet50(weights="imagenet")
 
     def preprocess(self, payload):
-        image = payload["image"].read()
-        image = Image.open(io.BytesIO(image))
+        image = load_img(payload["image"])
         # preprocess the image and prepare it for classification
         return prepare_image(image, target=(224, 224))
 
