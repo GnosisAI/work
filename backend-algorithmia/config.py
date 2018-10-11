@@ -7,6 +7,8 @@ MONGO_URI = "mongodb://zakari:zakari1@ds119662.mlab.com:19662/algorithm"
 SERVER_PORT = 8082
 SERVER_HOST = '0.0.0.0'
 
+AI_API = 'http://localhost:5001/predict'
+
 class JSONEncoder(json.JSONEncoder):                           
     ''' extend json-encoder class'''
     def default(self, o):                               
