@@ -11,7 +11,7 @@
                <h2 >Run an Example</h2>
             </div>
             <div class="col-md-6">
-               <input-console v-on:submit="onSubmit"/>
+               <input-console v-on:submit="onSubmit" :loading="loading"/>
                <div class="text-center">
                </div>
                <br>
@@ -33,9 +33,10 @@ import OutputConsole from './OutputConsole.vue'
 import Links from './Links.vue'
 import axios from 'axios';
 import env from '../../config/env'
-
-
 import Banner from './Banner.vue'
+
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+
 
   export default  {
     name: 'algorithm',
@@ -47,30 +48,25 @@ import Banner from './Banner.vue'
       
     },    
     created(){
-    console.log('The id is: ' + this.$route.params.name);
       this.$store.dispatch('getAlgoByName',{ name: this.$route.params.name});
     },
     methods:{
-       objToString (obj) {
-          var str = '{\n';
-          for (var p in obj) {
-              if (obj.hasOwnProperty(p)) {
-                  str += '\t"' +p + '" : "' + obj[p] + '"\n';
-              }
-          }
-          str += '}'
-          return str;
-      },
       onSubmit(value){
-      axios.get(env.API_URL+'algorithm/predict/conv')
-                .then(prediction => {
-                  this.output = this.objToString(prediction.data)
-                })
-        
+       if(! this.loading){
+        this.loading = true
+        axios.post(env.API_URL+'algorithm/predict/'+this.$route.params.name,JSON.parse(value))
+        .then(prediction => {
+            this.output = JSON.stringify(prediction.data,null,'\t')
+            this.loading = false 
+        })
+       }
       }
     },
     data(){
-      return {output:''}
+      return {
+          output:'',
+          loading:false
+      }
     },
     computed:{
       result(){

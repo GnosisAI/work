@@ -4,8 +4,7 @@
     <div class="code-toolbar"><label class="code-toolbar-label" >INPUT</label></div>
     <m-ace-editor  height="250px" v-model="inputs" :font-size="14" :line-height="1" mode="json"  :line-number="false" :highlight-active-line="false"  theme="dracula" ></m-ace-editor>
     <div class="text-center">
-          <button v-on:click="clicked()" class="btn btn-accent btn-raised" >Run the algorithm</button>        
-
+        <button v-on:click="clicked()"  class="btn btn-accent btn-raised " v-bind:class="{ disabled: loadingStat }"> Run the algorithm</button>        
     </div>
 
   </section>
@@ -22,9 +21,11 @@ Vue.use(MAceEditor)
   export default  {
 
     name: 'InputConsole',
-    props: [],
-    data: {
-      inputs:{},
+    props: {
+        loading:Boolean
+    }, 
+      data:{ 
+        inputs:{},
     },
     methods: {
       clicked(){
@@ -33,6 +34,9 @@ Vue.use(MAceEditor)
     },
     computed: {
 
+        loadingStat:function(){
+            return this.loading
+        }
     }
 }
 </script>

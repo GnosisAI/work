@@ -2,7 +2,9 @@
 from flask import Flask, jsonify, request
 from flask_pymongo import PyMongo
 from flask_cors import CORS, cross_origin
+import requests
 import config 
+import json
 
 app = Flask(__name__)
 app.config["MONGO_URI"] =config.MONGO_URI
@@ -43,13 +45,12 @@ def search():
     for doc in algo:
         output.append(doc)
     return jsonify(output)
-@app.route("/api/algorithm/predict/<name>")
-@cross_origin()
+@app.route("/api/algorithm/predict/<name>", methods=['POST'])
 def predict(name):
-    output = {
-        "result":name
-    }
-    return jsonify(output)
+    if request.method == "POST":
+        r = requests.post(config.AI_API+"/"+name, data=request.json)
+        print(r.json())
+    return jsonify(r.json())
 
 if __name__ == '__main__':
         app.run(host=config.SERVER_HOST,port=config.SERVER_PORT)

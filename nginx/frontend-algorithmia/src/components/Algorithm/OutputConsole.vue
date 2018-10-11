@@ -4,7 +4,6 @@
     <div class="code-toolbar"><label class="code-toolbar-label" >OUTPUT</label></div>
     <m-ace-editor  height="250px" v-model="output" :font-size="14" :line-height="1" mode="json"  :line-number="false" :highlight-active-line="false"  theme="dracula" ></m-ace-editor>
   </section>
-
 </template>
 
 <script lang="js">
