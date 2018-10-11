@@ -1,24 +1,25 @@
-from keras.applications import ResNet50, imagenet_utils
+from keras.applications import NASNetMobile, imagenet_utils
 import numpy as np
 from keras.preprocessing.image import load_img
 
+from keras.applications.nasnet import preprocess_input
 from algorithms.algorithm import algorithm
 from algorithms.preprocess.image import prepare_image, download_image
 
-class RxNet(algorithm):
+
+class NasNet(algorithm):
 
     def __init__(self):
         super().__init__(name='Rxnet')
-        self.model =  ResNet50(weights="imagenet")
+        self.model =  NASNetMobile(weights="imagenet")
 
     def preprocess(self, payload):
-        
+
         url = payload["image"]
         path = download_image(url)
         image = load_img(path)
         image = prepare_image(image, target=(224, 224))
-        image = np.expand_dims(image, axis=0)
-        return imagenet_utils.preprocess_input(image)
+        return np.expand_dims(preprocess_input(image), axis=0)
 
     def predict(self, payload):
         

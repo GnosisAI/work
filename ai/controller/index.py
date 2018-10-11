@@ -8,14 +8,13 @@ def predict(name):
     data = {"work":"false"}
     if flask.request.method == "POST":
         model = factoryAlgorithm(name)
-        url = flask.request.form["image"]
-        path_img = download_image(url)
-        payload = {"image": path_img}
+        payload = flask.request.form
+        print(payload)
         data = model.predict(payload)
         
     # return the data dictionary as a JSON response
-    return json.dumps(data)
+    return json.dumps(data, indent=4)
 if __name__ == "__main__":
     print(("* Loading Keras model and Flask starting server..."
         "please wait until server has fully started"))
-    app.run()
+    app.run(host="0.0.0.0",port=5001)

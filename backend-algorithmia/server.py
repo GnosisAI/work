@@ -1,5 +1,5 @@
 # coding: utf-8
-from flask import Flask, jsonify, request, make_response
+from flask import Flask, jsonify, request
 from flask_pymongo import PyMongo
 from flask_cors import CORS, cross_origin
 import requests
@@ -49,7 +49,8 @@ def search():
 def predict(name):
     if request.method == "POST":
         r = requests.post(config.AI_API+"/"+name, data=request.json)
-    return make_response(r.json())
+        print(r.json())
+    return jsonify(r.json())
 
 if __name__ == '__main__':
         app.run(host=config.SERVER_HOST,port=config.SERVER_PORT)

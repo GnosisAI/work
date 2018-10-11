@@ -95,5 +95,11 @@ bundle.js
 # End of https://www.gitignore.io/api/node,linux
 # Static folder 
 static/
+# swp swo swn
+*.swp
+*.swo
+*.swn
+#pyc
+*.pyc
 #pycache
 __pycache__
