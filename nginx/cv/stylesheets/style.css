@@ -661,11 +661,6 @@ html .btn, body .btn {
     color: #ffffff;
     width: 180px;
     border-radius: 2px; }
-#about .about-btn .btn:hover {
-    /*hover effect*/
-    background: #143961; 
-
-}
     .my-work{
         
         animation: shake 4s cubic-bezier(.36,.07,.19,.97) forwards;
@@ -673,7 +668,6 @@ html .btn, body .btn {
         backface-visibility: hidden;
         perspective: 1000px;
         animation-iteration-count: infinite;
-        animation-delay: 1s;
 
       }
       
