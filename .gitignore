@@ -102,4 +102,4 @@ static/
 #pyc
 *.pyc
 #pycache
-__pycache__
+__pycache__/
