@@ -1,4 +1,4 @@
 module.exports = {
-    API_URL:"http://localhost:8082/api/"
+    API_URL:"http://localhost:5000/api/"
 }
 

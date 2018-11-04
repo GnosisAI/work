@@ -1,0 +1,24 @@
+version: '3'
+services:
+  frontend:
+    build: ./nginx
+    ports: 
+      - "81:81"
+      - "82:82"
+    links: 
+      - backend
+  backend:
+    build: ./backend-algorithmia
+    ports: 
+      - "5000:5000"
+  ai:
+    build: ./ai/controller/
+    ports:
+      - "5001:5000"
+    
+
+
+    
+    
+
+  
