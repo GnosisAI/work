@@ -1,8 +1,8 @@
-from algorithms import RxNet, Inception, NasNet, Test
+from algorithms import ResNet, Inception, NasNet, Test
 def factoryAlgorithm(name):
     algorithm = None
     if(name == 'RxNet'):
-        algorithm = RxNet.RxNet()
+        algorithm = ResNet.RxNet()
     elif(name == 'Inception'):
         algorithm = Inception.Inception()
     elif(name == 'Test'):
