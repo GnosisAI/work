@@ -5,9 +5,9 @@ from bson.objectid import ObjectId
 
 MONGO_URI = "mongodb://zakari:zakari1@ds119662.mlab.com:19662/algorithm"
 SERVER_PORT = 5000
-SERVER_HOST = '127.0.0.1'
+SERVER_HOST = '0.0.0.0'
 
-AI_API = 'http://localhost:5001/predict'
+AI_API = 'http://ai:5000/predict'
 
 class JSONEncoder(json.JSONEncoder):                           
     ''' extend json-encoder class'''

@@ -3,12 +3,19 @@ services:
   frontend:
     build: ./nginx
     ports: 
-      - "81:80"
+      - "83:80"
   backend:
     build: ./backend-algorithmia
     ports: 
       - "5000:5000"
   ai:
     build: ./ai/controller/
-    ports:
-      - "5001:5000"
+    expose:
+      - "5000"
+    
+
+
+    
+    
+
+  

@@ -17,9 +17,7 @@ RUN npm run build
 
 ## Serve Stage
 FROM nginx:alpine
-COPY ./config/cv.conf /etc/nginx/conf.d/cv.conf
 COPY --from=cv /var/www/cv /var/www/cv
-COPY ./config/algorithmia.conf /etc/nginx/conf.d/algorithmia.conf
 COPY --from=Algorithmia /var/www/algorithmia/dist /var/www/algorithmia/
-EXPOSE 81
-EXPOSE 82
+COPY ./config/default.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
