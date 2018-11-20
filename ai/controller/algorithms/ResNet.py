@@ -5,10 +5,10 @@ from keras.preprocessing.image import load_img
 from algorithms.algorithm import algorithm
 from algorithms.preprocess.image import prepare_image, download_image
 
-class RxNet(algorithm):
+class ResNet(algorithm):
 
     def __init__(self):
-        super().__init__(name='Rxnet')
+        super().__init__(name='Resnet')
         self.model =  ResNet50(weights="imagenet")
 
     def preprocess(self, payload):
