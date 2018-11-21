@@ -33,7 +33,7 @@ export default {
       return this.$route.params.name
     },
     algorithmsList(){
-      return this.$store.state.catAlgorithms
+      return this.$store.state.algorithm.catAlgorithms
     }
   }
 }

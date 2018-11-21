@@ -32,10 +32,10 @@ export default {
   },
   computed:{
     algorithms(){
-    if(this.$store.state.algorithms != null){
+    if(this.$store.state.algorithm.algorithms != null){
           this.loading=false
     }
-    return this.$store.state.algorithms
+    return this.$store.state.algorithm.algorithms
     }
   }
 }

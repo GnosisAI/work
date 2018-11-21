@@ -28,7 +28,7 @@ export default {
             return this.$route.query.q
         },
         algorithmsList(){
-            return this.$store.state.filtredAlgorithms
+            return this.$store.state.algorithm.filtredAlgorithms
         }
     }
 }
