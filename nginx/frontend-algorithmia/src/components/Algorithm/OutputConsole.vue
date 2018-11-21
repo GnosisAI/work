@@ -2,7 +2,7 @@
 
   <section class="Console">
     <div class="code-toolbar"><label class="code-toolbar-label" >OUTPUT</label></div>
-    <m-ace-editor  height="250px" v-model="output" :font-size="14" :line-height="1" mode="json"  :line-number="false" :highlight-active-line="false"  theme="dracula" ></m-ace-editor>
+    <m-ace-editor  height="250px" v-model="result" :font-size="14" :line-height="1" mode="json"  :line-number="false" :highlight-active-line="false"  theme="dracula" ></m-ace-editor>
   </section>
 </template>
 
@@ -16,23 +16,25 @@ Vue.use(MAceEditor)
   export default  {
 
     name: 'OutputConsole',
-    props: ['output'],
-    data: {
-
+    props: {
+      output:{
+        type: String
+      }
     },
-    methods: {
 
+    methods: {
     },
     computed: {
-
+      result:function(){
+        return this.output || '"the result will be printed here !"'
+      }
     }
 }
 </script>
 
 <style scoped lang="css">
-  m-ace-editor {
-    width: 100%;
-    background-color: #423e67;
+m-ace-editor {
+  width: 100%;
+  background-color: #423e67;
 }
-
 </style>

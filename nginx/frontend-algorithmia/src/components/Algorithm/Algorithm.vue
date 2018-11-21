@@ -11,7 +11,7 @@
                <h2 >Run an Example</h2>
             </div>
             <div class="col-md-6">
-               <input-console v-on:submit="onSubmit" :loading="loading"/>
+               <input-console v-on:submit="onSubmit" :loading="loading" :inputs="inputs"/>
                <div class="text-center">
                </div>
                <br>
@@ -32,7 +32,7 @@ import InputConsole from './InputConsole.vue'
 import OutputConsole from './OutputConsole.vue'
 import Links from './Links.vue'
 import axios from 'axios';
-import env from '../../config/env'
+import {API_URL} from '../../config/env'
 import Banner from './Banner.vue'
 
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -54,7 +54,8 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
       onSubmit(value){
        if(! this.loading){
         this.loading = true
-        axios.post(env.API_URL+'algorithm/predict/'+this.$route.params.name,JSON.parse(value))
+        global.console.log(value)
+        axios.post(API_URL+'algorithm/predict/'+this.$route.params.name,JSON.parse(value))
         .then(prediction => {
             this.output = JSON.stringify(prediction.data,null,'\t')
             this.loading = false 
@@ -65,7 +66,7 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
     data(){
       return {
           output:'',
-          loading:false
+          loading:false,
       }
     },
     computed:{
@@ -73,7 +74,10 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
         return this.output 
       },
       algo(){
-        return this.$store.state.algorithm
+        return this.$store.state.algorithm.algorithm
+      },
+      inputs(){
+        return JSON.stringify(this.$store.state.algorithm.algorithm.example.inputs,null,2)
       }
     }
 }

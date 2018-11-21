@@ -2,7 +2,7 @@
 
   <section class="Console">
     <div class="code-toolbar"><label class="code-toolbar-label" >INPUT</label></div>
-    <m-ace-editor  height="250px" v-model="inputs" :font-size="14" :line-height="1" mode="json"  :line-number="false" :highlight-active-line="false"  theme="dracula" ></m-ace-editor>
+    <m-ace-editor  height="250px" v-model="example" :font-size="14" :line-height="1" mode="json"  :line-number="false" :highlight-active-line="false"  theme="dracula" ></m-ace-editor>
     <div class="text-center">
         <button v-on:click="clicked()"  class="btn btn-accent btn-raised " v-bind:class="{ disabled: loadingStat }"> Run the algorithm</button>        
     </div>
@@ -22,21 +22,25 @@ Vue.use(MAceEditor)
 
     name: 'InputConsole',
     props: {
-        loading:Boolean
-    }, 
-      data:{ 
-        inputs:{},
+        loading:Boolean,
+        inputs:String
+    },
+    data(){
+      return {
+        example:this.inputs
+      }
     },
     methods: {
       clicked(){
-        this.$emit('submit',this.inputs)
+        this.$emit('submit',this.example)
       }
     },
     computed: {
 
         loadingStat:function(){
             return this.loading
-        }
+        },
+
     }
 }
 </script>
