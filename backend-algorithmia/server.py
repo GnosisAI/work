@@ -51,6 +51,20 @@ def predict(name):
         r = requests.post(config.AI_API+"/"+name, data=request.json)
         print(r.json())
     return jsonify(r.json())
+@app.route("/api/categorie/")
+@cross_origin()
+def all_cat():
+    cats = mongo.db.categories
+    output = []
+    for doc in cats.find():
+        output.append(doc)
+    return jsonify(output)
 
+@app.route("/api/categorie/<name>")
+@cross_origin()
+def single_cat(name):
+    print(str(name))
+    output = mongo.db.categories.find_one_or_404({'name':name})
+    return jsonify(output)
 if __name__ == '__main__':
         app.run(host=config.SERVER_HOST,port=config.SERVER_PORT)
