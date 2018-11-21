@@ -20,9 +20,6 @@ export default {
         Search,
         Algorithms
     },
-    created(){
-    this.$store.dispatch('getFiltredAlgos',{ q: this.$route.query.q});
-    },
     computed:{
         getSearchVal(){
             return this.$route.query.q

@@ -21,7 +21,8 @@ export default {
   },
   methods:{
     searchAlgo(){
-       this.$router.push({ path: '/search/?q='+this.value})
+       this.$router.push({ path: '/search/?q='+this.value});
+    this.$store.dispatch('getFiltredAlgos',{ q: this.$route.query.q});
     }
   }
 
