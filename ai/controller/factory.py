@@ -2,7 +2,7 @@ from algorithms import ResNet, Inception, NasNet, Test
 def factoryAlgorithm(name):
     algorithm = None
     if(name == 'RxNet'):
-        algorithm = ResNet.RxNet()
+        algorithm = ResNet.ResNet()
     elif(name == 'Inception'):
         algorithm = Inception.Inception()
     elif(name == 'Test'):
