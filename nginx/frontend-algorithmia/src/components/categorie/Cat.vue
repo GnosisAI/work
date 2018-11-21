@@ -2,7 +2,7 @@
     <div class="container content-container" >
       <div class="row" >
         <Search/>
-        <CatDesc :title="getTitle"/>
+        <CatDesc :cat="categorie"/>
         <Algorithms :algorithms-list="algorithmsList"/>
       </div>
     </div>
@@ -26,14 +26,15 @@ export default {
     }
   },
   created(){
+    this.$store.dispatch('getCatByName',{ name: this.$route.params.name});
     this.$store.dispatch('getCatAlgos',{ cat: this.$route.params.name});
   },
   computed:{
-    getTitle(){
-      return this.$route.params.name
-    },
     algorithmsList(){
       return this.$store.state.algorithm.catAlgorithms
+    },
+    categorie(){
+      return this.$store.state.categorie.categorie
     }
   }
 }
