@@ -7,7 +7,7 @@
                   aria-expanded="false" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span>
                <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
                </button> 
-               <a href="/" title="Zakaria CV" class="navbar-brand active"><span id="nav-logo" class="nav-logo-full"></span>
+               <a href="cv.zakaria.im" title="Zakaria CV" class="navbar-brand active"><span id="nav-logo" class="nav-logo-full"></span>
                   Zakaria CV
                 </a>
                <!---->
@@ -16,8 +16,7 @@
                <div>
                   <ul class="nav navbar-nav navbar-links">
                      <li class="visible-lg visible-md"><a href="/"><span>Home</span></a></li>
-                     <li class="visible-lg visible-md"><a><span>Algorithms</span></a></li>
-                     <li class="visible-lg visible-md"><a href="www.zakaria.im"><span>Contact</span></a></li>
+                     <li class="visible-lg visible-md"><a href="cv.zakaria.im"><span>Contact</span></a></li>
                   </ul>
                   <!---->
                </div>
