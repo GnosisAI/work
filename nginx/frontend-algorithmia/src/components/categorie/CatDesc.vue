@@ -1,5 +1,5 @@
 <template>
-   <div class="category-overview">
+   <div class="category-overview" v-if="cat">
       <h2><img src="@/assets/images/categories/default.png" class="category-icon">
          {{cat.name}}
       </h2>

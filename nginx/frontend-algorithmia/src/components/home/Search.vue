@@ -16,12 +16,13 @@ export default {
   name: 'Search',
   data(){
     return {
-      value: this.route.query.q
+      value: this.$route.query.q
     }
   },
   methods:{
     searchAlgo(){
-       this.$router.push({ path: '/search/?q='+this.value});
+      var query = {q:this.value}
+     this.$router.push({ path: '/search/',query:query});
     this.$store.dispatch('getFiltredAlgos',{ q: this.$route.query.q});
     }
   }

@@ -1,23 +1,40 @@
 <template>
-<div class="col-md-12" >
+<div class="col-md-12" v-if="algorithmsList">
  <ul class="nav nav-tabs">
-  <li class="active"><a data-toggle="tab" href="#top-rated"> <i class="fa fa-star"></i> Top Rated</a></li>
+  <li class="active"><a data-toggle="tab" href="#most-called"> <i class="fa fa-star"></i> Most Called</a></li>
   <li><a data-toggle="tab" href="#new"> <i class="fa fa-clock"></i> Recently Added</a></li>
 </ul>
 
 <div class="tab-content">
-  <div id="top-rated" class="tab-pane fade in active">
+  <div id="most-called" class="tab-pane fade in active">
                <div class="pv-32 api-loading"  v-if="loading">
                   <span class="mr-8" >
                   <i class="aspinner" ></i></span>
                   <span class="pb-8" >Loading...</span>
                </div>
                <div v-if="!loading">
-                  <algo-item v-for="algo in algorithmsList" :key="algo.id" v-bind="algo" />
+                  <div v-if="algorithmsList.length > 0">
+                  <algo-item v-for="algo in bestAlgorithmList" :key="algo.id" v-bind="algo" />
+                  </div>
+                  <div v-else>
+                    <h4>no result was found</h4>
+                  </div>
                </div>
   </div>
   <div id="new" class="tab-pane fade">
-    <p>New Algorithms</p>
+                <div class="pv-32 api-loading"  v-if="loading">
+                  <span class="mr-8" >
+                  <i class="aspinner" ></i></span>
+                  <span class="pb-8" >Loading...</span>
+               </div>
+               <div v-if="!loading">
+                  <div v-if="algorithmsList.length > 0">
+                  <algo-item v-for="algo in newAlgorithmList" :key="algo.id" v-bind="algo" />
+                  </div>
+                  <div v-else>
+                    <h4>no result was found</h4>
+                  </div>
+               </div>
   </div>
 </div>
 </div>
@@ -37,6 +54,30 @@ export default {
   show: false,
   data() {
     return {};
+  },
+  computed:{
+    newAlgorithmList(){
+      function compare(a, b) {
+        if (a.updated < b.updated)
+          return 1;
+        if (a.updated > b.updated)
+          return -1;
+        return 0;
+      }
+      
+      return [...this.algorithmsList].sort(compare);
+    },
+    bestAlgorithmList(){
+      function compare(a, b) {
+        if (a.stars < b.stars)
+          return 1;
+        if (a.stars > b.stars)
+          return -1;
+        return 0;
+      }
+      
+      return [...this.algorithmsList].sort(compare);
+    }
   }
 };
 </script>

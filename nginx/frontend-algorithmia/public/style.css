@@ -4949,7 +4949,11 @@ footer,
 .footer {
     padding-top: 2rem;
     margin-top: 4rem;
-    background-color: #f5f5f5
+    background-color: #d8d6d6;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
 
 footer .footer__links,

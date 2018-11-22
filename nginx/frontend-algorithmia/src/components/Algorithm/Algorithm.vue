@@ -1,5 +1,5 @@
 <template lang="html">
-   <section class="algorithm">
+   <section class="algorithm" v-if="algo">
       <div class="jumbotron">
          <h4 class="text-center"> <span>{{algo.category[0]}}/</span><strong>{{algo.name}}/</strong>{{ algo.version }}</h4>
       </div>
@@ -54,7 +54,6 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
       onSubmit(value){
        if(! this.loading){
         this.loading = true
-        global.console.log(value)
         axios.post(API_URL+'algorithm/predict/'+this.$route.params.name,JSON.parse(value))
         .then(prediction => {
             this.output = JSON.stringify(prediction.data,null,'\t')
