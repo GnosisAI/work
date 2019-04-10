@@ -24,6 +24,7 @@ export const algorithm = {
     },
     actions:{
         getAlgos({commit}){
+            global.console.log('calling the'+API_URL+'algorithm/');
             axios.get(API_URL+'algorithm/')
                 .then(algos => {
                     commit('addAlgorithms',algos.data);

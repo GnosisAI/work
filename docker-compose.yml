@@ -4,6 +4,8 @@ services:
     build: ./nginx
     ports: 
       - "81:80"
+    environment: 
+      - API_URL=http://35.238.130.34:5000/api/
   backend:
     build: ./backend-algorithmia
     ports: 
